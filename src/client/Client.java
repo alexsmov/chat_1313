@@ -19,20 +19,20 @@ public class Client {
                 @Override
                 public void run() {
                     try {
-                        while (true) {
+                        while (true){
                             String response = in.readUTF();
-                            System.out.println("Ответ от сервера " + response);
+                            System.out.println(response);
                         }
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
+
                 }
             });
             thread.start();
             while (true){
                 String text = scanner.nextLine();
                 out.writeUTF(text);
-
             }
         } catch (IOException e) {
             e.printStackTrace();
